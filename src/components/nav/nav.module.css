@@ -1,0 +1,124 @@
+.logo {
+    width: auto;
+    height: 80px;
+    margin-left: 30px;
+}
+
+.btn2 {
+    position: relative;
+    display: inline-block;
+    padding: 2px 15px;
+    border: 2px solid #fefefe;
+    text-transform: uppercase;
+    color: #fefefe;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn2::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - -2px);
+    background-color: #121212;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+.btn2::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 50px);
+    background-color: #121212;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+.btn2:hover::before {
+    transform: translateY(-25px);
+    height: 0;
+}
+
+.btn2:hover::after {
+    transform: scaleX(0);
+    transition-delay: 0.15s;
+}
+
+.btn2:hover {
+    border: 2px solid #007BFF;
+    /* border: 2px solid #fefefe; */
+}
+
+button {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
+
+p {
+    position: relative;
+    z-index: 3;
+}
+
+
+.linkIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #121212;
+    backdrop-filter: blur(1px);
+    height: 3.5em;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.active {
+    background-color: #007BFF;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: center;
+    ;
+}
+
+.links {
+    justify-content: space-between;
+    place-items: center;
+    margin-left: 200px;
+}
+
+.home {
+    margin-right: 20px;
+}
+
+p {
+    color: rgb(255, 255, 255);
+    font-size: medium;
+}
+
+@media (max-width: 1100px) {
+    .links {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 760px) {
+    .logo {
+        display: none !important;
+    }
+}

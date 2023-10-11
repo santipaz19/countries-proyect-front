@@ -1,0 +1,139 @@
+.detalles {
+    flex: 1;
+    /* margin: 20px; */
+    display: flex;
+    place-items: center;
+    /* padding: 20px; */
+    justify-content: center;
+}
+
+.card {
+    background-color: #212121;
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 20px;
+    box-shadow: 0px 0px 15px 0px rgb(189, 100, 245);
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    margin-top: 0px;
+}
+
+.text {
+    color: rgb(235, 217, 246);
+    text-shadow: 0 0 5px rgb(189, 100, 245), 0 0 25px rgb(189, 100, 245), 0 0 5px rgb(189, 100, 245), 0 0 5px rgb(189, 100, 245)
+}
+
+.home {
+    align-items: flex-start;
+    /* justify-content: flex-start; */
+    display: flex;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.img {
+    flex: 1;
+    display: grid;
+    place-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.h {
+    width: 50%;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 0 none;
+}
+
+.img img {
+    width: 60%;
+    height: auto;
+    border: solid #ffffff 2px;
+    border-radius: 4px;
+    image-rendering: smooth;
+}
+
+.info {
+    display: flex;
+    width: auto;
+    padding: 30px;
+}
+
+.fullCard {
+    display: grid;
+    flex: 1;
+    width: 100vw;
+    /* background-color: #000000; */
+    /* justify-content: center; */
+    padding-bottom: 30px;
+    /* justify-content: space-around; */
+    margin-bottom: 0px;
+    background: url("../../assets/fondo8.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.elemento {
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    width: fit-content;
+}
+
+.btn {
+    font-size: 18px;
+    letter-spacing: 2px;
+    /* text-transform: uppercase; */
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    padding: 4px 8px;
+    border: 3px solid #fffbfd;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.btn:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #ffffff;
+    z-index: -1;
+}
+
+.btn:hover,
+.btn:focus {
+    color: rgb(0, 0, 0);
+}
+
+.btn:hover:before,
+.btn:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
