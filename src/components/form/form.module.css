@@ -1,0 +1,143 @@
+.all {
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    /* background-color: #9fdb47; */
+    background-color: #212121;
+    box-shadow: 0px 0px 30px #2096bc;
+    width: 50vw;
+    height: fit-content;
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
+    margin: 40px;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: grid;
+}
+
+.x {
+    cursor: pointer;
+    padding: 0px;
+}
+
+option {
+    text-align: center;
+}
+
+.select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.select ul {
+    margin: 8px;
+    padding: 5px;
+    display: flex;
+    background-color: #4d4e4f;
+    border-radius: 5px;
+}
+
+.intoForm {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.error {
+    color: rgb(109, 106, 106);
+    text-align: end;
+}
+
+.column {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Una sola columna */
+    grid-template-rows: repeat(3, 30px);
+    /* Tres filas de 100px de alto cada una */
+}
+
+.label {
+    color: #ffffff;
+    /* color: #007BFF; */
+    text-shadow: 2px 2px 10px rgba(161, 161, 161, 0.326);
+    font-size: 20px;
+    text-align: start;
+}
+
+.img {
+    justify-content: center;
+
+}
+
+.img img {
+    width: auto;
+    height: 60vh;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.input {
+    justify-content: center;
+    align-items: center;
+    background-color: #3b3b3b;
+    border: #2096bc solid 2px;
+    border-radius: 4px;
+    transition: ease 0.3s;
+    cursor: auto;
+}
+
+.input:hover {
+    border: 2px solid white;
+}
+
+.button {
+    position: relative;
+    background-color: #3b3b3b;
+    border-radius: 5px;
+    box-shadow: #007BFF 0px 0px 0px 0px;
+    padding: 15px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    width: 200px;
+    height: auto;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+.button::before {
+    content: "";
+    background-color: #007BFF;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 700ms ease-in-out;
+    display: inline-block;
+}
+
+.button:hover::before {
+    width: 100%;
+}
+
+.button:hover:disabled {
+    cursor: none;
+}

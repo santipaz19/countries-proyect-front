@@ -54,9 +54,8 @@ export default function Countries() {
                     </div>
                     <h2>hola</h2>
                 </div>
-                {console.log(countries)}
+
                 <div className={style.tarjetas}>
-                    {console.log(countries)}
                     {/* {countries?.map(country => {
                         return <Card key={country.id} countries={country} />
                     })} */}

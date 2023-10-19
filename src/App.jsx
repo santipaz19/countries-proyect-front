@@ -5,6 +5,7 @@ import Nav from "./components/nav/Nav";
 import Landing from "./components/landing/Landing";
 import Detail from "./components/detail/Detail";
 import Countries from "./components/countries/Countries";
+import Form from './components/form/form';
 import { About } from './components/about/about';
 
 
@@ -21,8 +22,7 @@ function App() {
         <Route path="/home" element={<Countries />} />
         <Route path="/countries/:idPais" element={<Detail />} />
         <Route path="/about" element={<About />} />
-        {/* <Route path="/home" element={<Countries />} /> 
-        <Route path="/new-activity" element={<Form />} /> */}
+        <Route path="/new-activity" element={<Form />} />
       </Routes>
     </div>
   )
