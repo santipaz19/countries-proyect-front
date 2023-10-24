@@ -22,7 +22,7 @@ export default function Form() {
     )
 
     const dispatch = useDispatch();
-    const countries = useSelector((state) => state.countries)
+    const allCountries = useSelector((state) => state.allCountries)
 
 
     const handleInput = (event) => {
@@ -59,7 +59,7 @@ export default function Form() {
                 console.log(create)
                 await axios.post("http://localhost:3001/activities", create);
                 alert('Actividad creada con éxito');
-
+                dispatch(getCountries())
                 // Restablecer el formulario y el estado
                 setCreate({
                     nombre: "",
@@ -81,14 +81,14 @@ export default function Form() {
 
     useEffect(() => {
         setError(validate(create))
-        if (!countries[0]) {
+        if (!allCountries[0]) {
             dispatch(getCountries());
         }
     },
-        [dispatch, countries, create]
+        [dispatch, allCountries, create]
     )
 
-    const orderCountries = [...countries].sort((a, b) => a.nombre.localeCompare(b.nombre));
+    const orderCountries = [...allCountries].sort((a, b) => a.nombre.localeCompare(b.nombre));
 
 
     return (
@@ -159,7 +159,7 @@ export default function Form() {
                             <label className={style.label} >Pais:</label>
                             <select value={selectedCountry} onChange={handleSelect} className={style.input}>
                                 <option value="">Agregar pais</option>
-                                {orderCountries.map(({ nombre, id, bandera }) => (
+                                {orderCountries.map(({ nombre, id }) => (
                                     <option key={id} value={nombre}>
                                         {nombre}
                                     </option>
@@ -180,9 +180,6 @@ export default function Form() {
                             ))}
                         </ul>
                         <button type="submit" className={style.button}>Crear</button>
-                    </div>
-                    <div className={style.img}>
-                        <img src={form} alt="img" />
                     </div>
                 </div>
             </form >

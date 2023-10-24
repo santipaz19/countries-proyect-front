@@ -3,6 +3,9 @@ export const GET_COUNTRIES = "GET_COUNTRIES";
 export const GET_ACTIVITIES = "GET_ACTIVITIES";
 export const SEARCH = "SEARCH"
 export const DELETE_FILTERS = "DELETE_FILTERS"
+export const CONTINENTS = "CONTINENTS"
+export const ORDER_COUNTRIES = "ORDER_COUNTRIES"
+export const FILTER_ACTIVITY = "FILTER_ACTIVITY"
 
 
 export const getCountries = () => async (dispatch) => {
@@ -38,4 +41,16 @@ export const getByName = (value) => async (dispatch) => {
 
 export const deleteFilters = () => dispatch => {
     return dispatch({ type: DELETE_FILTERS })
+}
+
+export const filterContinents = (payload) => dispatch => {
+    return dispatch({ type: CONTINENTS, payload })
+}
+
+export const orderCountries = (payload) => dispatch => {
+    return dispatch({ type: ORDER_COUNTRIES, payload })
+}
+
+export const filterActivities = (payload) => dispatch => {
+    return dispatch({ type: FILTER_ACTIVITY, payload })
 }

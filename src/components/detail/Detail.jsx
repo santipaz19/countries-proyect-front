@@ -26,6 +26,7 @@ const Detail = () => {
         };
     }, [idPais]);
 
+    const activities = countryDetail.Activities
 
     return (
         <div className={style.fullCard}>
@@ -38,6 +39,7 @@ const Detail = () => {
                 <div className={style.img}>
                     <img src={countryDetail.bandera} alt={countryDetail.nombre} />
                 </div>
+
                 <div className={style.detalles} >
                     <div className={style.card}>
                         <h2 className={style.elemento}><span className={style.text}>ID:</span> {countryDetail.id}</h2>
@@ -47,6 +49,13 @@ const Detail = () => {
                         <h4 className={style.elemento}><span className={style.text}>Subregion: </span>  {countryDetail.subregion}</h4>
                         <h4 className={style.elemento}><span className={style.text}>Area:</span>      {countryDetail.area} km²</h4>
                     </div>
+                    {activities?.map((actividad) => (
+                        <div key={actividad.id} className={style.actividad}>
+                            <h2 className={style.elemento}>
+                                <span className={style.text}>{actividad.nombre}</span>
+                            </h2>
+                        </div>
+                    ))}
 
                 </div>
             </div>

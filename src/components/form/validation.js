@@ -12,5 +12,7 @@ export const validate = (create) => {
     if (create.temporada === "") errors.temporada = "Ingrese una temporada"
 
     if (create.descripcion === "") errors.descripcion = "Ingrese una descripcion"
+
+    if (create.countries.length === 0) errors.pais = "Ingrese uno o mas paises"
     return errors
 };

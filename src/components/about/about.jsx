@@ -5,11 +5,12 @@ import help3 from '../../assets/HELP3.png'
 // import help4 from '../../assets/HELP4.png'
 // import help1 from '../../assets/HELP1.png'
 import help6 from '../../assets/HELP6.png'
+import help7 from '../../assets/formguie.png'
 export function About() {
 
     return (
         <div className={style.allText}>
-            <h1 className={style.subtitle}>Guía de Uso de la Página Web</h1>
+            <h1 className={style.subtitle}>Guía de Uso</h1>
             <hr className={style.h} />
             <ul className={style.text}>
                 <li>
@@ -55,14 +56,18 @@ export function About() {
                     <p>
                         También en la barra de navegación, encontrarás un botón "New Activity". Al hacer clic en este botón, podrás crear una nueva actividad. Deberás proporcionar la siguiente información:
                     </p>
-                    <ul>
-                        <li>Nombre de la actividad.</li>
-                        <li>Horas estimadas para completar la actividad.</li>
-                        <li>Temporada en la que se puede realizar la actividad.</li>
-                        <li>Dificultad de la actividad.</li>
-                        <li>Una descripción de la actividad.</li>
-                        <li>Seleccionar a qué países está asociada la actividad. Puedes asociar la actividad a uno o más países.</li>
-                    </ul>
+                    <div className={style.info}>
+                        <ul>
+                            <li>Nombre de la actividad.</li>
+                            <li>Horas estimadas para completar la actividad.</li>
+                            <li>Temporada en la que se puede realizar la actividad.</li>
+                            <li>Dificultad de la actividad.</li>
+                            <li>Una descripción de la actividad.</li>
+                            <li>Seleccionar a qué países está asociada la actividad. Puedes asociar la actividad a uno o más países.</li>
+                        </ul>
+                        <img className={style.img} src={help7} alt='help7' />
+                    </div>
+
                 </li>
                 <li>
                     <h2 className={style.subtitle}>Filtrar Países y Ordenar</h2>
