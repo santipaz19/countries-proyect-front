@@ -49,15 +49,19 @@ const Detail = () => {
                         <h4 className={style.elemento}><span className={style.text}>Subregion: </span>  {countryDetail.subregion}</h4>
                         <h4 className={style.elemento}><span className={style.text}>Area:</span>      {countryDetail.area} km²</h4>
                     </div>
-                    {activities?.map((actividad) => (
-                        <div key={actividad.id} className={style.actividad}>
-                            <h2 className={style.elemento}>
-                                <span className={style.text}>{actividad.nombre}</span>
-                            </h2>
-                        </div>
-                    ))}
-
                 </div>
+            </div>
+            <h2 className={style.subtitle}>Actividades del pais:</h2>
+            <div className={style.activitiesCont}>
+                {activities?.map((actividad) => (
+                    <div key={actividad.id} className={style.actividad}>
+                        <h2 className={style.elemento}> <span className={style.text2}>Nombre:</span> {actividad.nombre}</h2>
+                        <h4 className={style.elemento}> <span className={style.text2}>Descripcion:</span> {actividad.descripcion}</h4>
+                        <h4 className={style.elemento}> <span className={style.text2}>Dificultad:</span> {actividad.dificultad}</h4>
+                        <h4 className={style.elemento}> <span className={style.text2}>Tiempo estimado:</span> {actividad.duracion} horas</h4>
+                        <h4 className={style.elemento}> <span className={style.text2}>Temporada:</span> {actividad.temporada}</h4>
+                    </div>
+                ))}
             </div>
             <Link target="_blank" to={`https://es.wikipedia.org/wiki/${countryDetail.nombre}`}>
                 <button className={style.btn}>Wikipedia</button>

@@ -1,14 +1,8 @@
-import { GET_COUNTRIES, GET_ACTIVITIES, SEARCH, DELETE_FILTERS, CONTINENTS, ORDER_COUNTRIES, FILTER_ACTIVITY } from './actions'
+import { GET_COUNTRIES, GET_ACTIVITIES, SEARCH, DELETE_FILTERS, CONTINENTS, ORDER_COUNTRIES, FILTER_ACTIVITY, ERROR } from './actions'
 
 const initialState = {
     allCountries: [],
     countries: [],
-    visibleCountries: [],
-    pages: 0,
-    activePage: 1,
-    cantPage: 10,
-    // error: false,
-    // check: false,
     activities: []
 }
 
@@ -19,16 +13,14 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 countries: action.payload,
                 allCountries: action.payload,
-                // visibleCountries: action.payload.slice(0, 10),
-                // pages: Math.ceil(action.payload.length / 10),
-                // activePage: 1,
-                // error: 0
+                error: 0
             };
 
         case GET_ACTIVITIES:
             return {
                 ...state,
-                activities: action.payload
+                activities: action.payload,
+                error: 0
             };
 
         case SEARCH:
@@ -46,7 +38,6 @@ const rootReducer = (state = initialState, action) => {
         case CONTINENTS:
             const select = [...state.allCountries]
             let filter = select.filter(event => event.continente === action.payload)
-            console.log(filter);
             return {
                 ...state,
                 countries: action.payload === 'all' ? [...state.allCountries] : filter
@@ -58,6 +49,12 @@ const rootReducer = (state = initialState, action) => {
                 sortedCountries = [...state.countries].sort((a, b) => a.nombre.localeCompare(b.nombre));
             } else if (action.payload === 'DESC') {
                 sortedCountries = [...state.countries].sort((a, b) => b.nombre.localeCompare(a.nombre));
+            }
+            else if (action.payload === 'POP-ASC') {
+                sortedCountries = [...state.countries].sort((a, b) => b.poblacion - a.poblacion);
+            }
+            else if (action.payload === 'POP-DESC') {
+                sortedCountries = [...state.countries].sort((a, b) => a.poblacion - b.poblacion);
             } else {
                 // Si es "Sin ordenar", simplemente usamos la copia sin ordenar
                 sortedCountries = [...state.allCountries];
@@ -71,10 +68,16 @@ const rootReducer = (state = initialState, action) => {
             const allCountries = state.countries
             const filters = allCountries.filter((country) =>
                 country.Activities.some((activity) => activity.nombre === action.payload))
-            console.log(filters)
+
             return {
                 ...state,
                 countries: filters !== null ? filters : [...state.allCountries]
+            }
+
+        case ERROR:
+            return {
+                ...state,
+                error: 1
             }
 
         default:

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getCountries } from "../../redux/actions";
+import { getActivities, getCountries } from "../../redux/actions";
 import { validate } from "./validation";
 import axios from "axios";
 import style from './form.module.css';
@@ -56,9 +56,9 @@ export default function Form() {
         try {
             if (Object.keys(error).length === 0) {
                 // Realizar la solicitud
-                console.log(create)
                 await axios.post("http://localhost:3001/activities", create);
                 alert('Actividad creada con éxito');
+                dispatch(getActivities())
                 dispatch(getCountries())
                 // Restablecer el formulario y el estado
                 setCreate({

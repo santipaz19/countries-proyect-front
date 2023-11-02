@@ -21,7 +21,6 @@ export function Search() {
         }
         else {
             alert('Solo puedes bucar desde home')
-            history.push("/home")
         }
     };
 
